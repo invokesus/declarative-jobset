@@ -2,7 +2,7 @@
 let
   pkgs = import nixpkgs {};
 in {
-  jobsets = pkgs.writeText "rendered-jobsets.json" (builtins.toJSON {
+  jobsets = pkgs.writeText "spec.json" (builtins.toJSON {
     minimal = {
       enabled = 1;
       hidden = false;
@@ -16,10 +16,10 @@ in {
       keepnr = 3;
       inputs = {
         nixpkgs = {
-	  type = "git";
-	  value = "https://github.com/grahamc/nixpkgs.git minimal";
-	  emailresponsible = false;
-  	};
+        type = "git";
+        value = "https://github.com/grahamc/nixpkgs.git minimal";
+        emailresponsible = false;
+        };
       };
     };
   });
